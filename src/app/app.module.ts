@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
+import { ViewBlogComponent } from './view-blog/view-blog.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { BlogCreateComponent } from './blog-create/blog-create.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    BlogCreateComponent
+    BlogCreateComponent,
+    ViewBlogComponent
   ],
   imports: [
     BrowserModule,
