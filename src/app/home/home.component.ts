@@ -9,6 +9,25 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  public info = [
+    {
+      "Name" : "Shubham Thorve",
+      "Location" : "Pune",
+      "Profession" : "Computer Engineer"
+    },
+    {
+      "Name" : "Rushikesh Bane",
+      "Location" : "Pune",
+      "Profession" : "Accountant"
+    },
+    {
+      "Name" : "Rakesh Chaudhari",
+      "Location" : "Pune",
+      "Profession" : "Architect"
+    }
+
+  ]
+
   ngOnInit(): void {
   }
 
