@@ -44,6 +44,19 @@ export class BlogService {
       "bodyHtml" : "this is development blog",
       "description" : "this is development blog description",
       "title" : "About node 10 Launch"
+    },
+    {
+      "blogId" : "4",
+      "lastModified" : "2019-10-22T15:00:00.782Z",
+      "created" : "2019-10-22T15:00:00.782Z",
+      "tags" : [],
+      "author" : "Revan Indral",
+      "category" : "Language",
+      "isPublished" : true,
+      "views" : 0,
+      "bodyHtml" : "this is Language blog",
+      "description" : "this is Language blog description",
+      "title" : "About Spanish Course Launch"
     }
     
   ]
