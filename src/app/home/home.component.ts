@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-home',
@@ -7,28 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private blogService:BlogService) { }
 
-  public info = [
-    {
-      "Name" : "Shubham Thorve",
-      "Location" : "Pune",
-      "Profession" : "Computer Engineer"
-    },
-    {
-      "Name" : "Rushikesh Bane",
-      "Location" : "Pune",
-      "Profession" : "Accountant"
-    },
-    {
-      "Name" : "Rakesh Chaudhari",
-      "Location" : "Pune",
-      "Profession" : "Architect"
-    }
-
-  ]
+  allBlogs:any;
 
   ngOnInit(): void {
+    this.allBlogs=this.blogService.getAllBlog();
   }
 
 }

@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { ViewBlogComponent } from './view-blog/view-blog.component';
+import { BlogService } from './blog.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { ViewBlogComponent } from './view-blog/view-blog.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

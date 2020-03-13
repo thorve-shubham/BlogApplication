@@ -1,1 +1,37 @@
-<p>view-blog works!</p>
+<h3 style="text-align: center;">Detailed View of Person</h3><br>
+<div class="container" style="text-align: center;">
+<div *ngIf="currentBlog; else InvalidPost">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card bg-light">
+                <div class="card-header">Title : {{ currentBlog.title | uppercase }}<br>
+                    <p *ngIf="currentBlog.tags.length>0">Tags : <span *ngFor="let tag of currentBlog.tags;let last=last">{{ tag }}{{last ? "" : ","}}</span> </p>
+                </div>
+                <div class="card-body">
+                    <p [innerHTML]="currentBlog.bodyHtml"></p><br>
+                    <p>Category : {{currentBlog.category}}</p>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-4 mt-1">
+                            <button class="btn btn-primary">Edit</button>
+                        </div>
+                        <div class="col-md-4 mt-1">
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                        <div class="col-md-4 mt-1">
+                            <a class="btn btn-info" [routerLink]="['/home']">Back</a>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #InvalidPost>
+    NoPost Found
+</ng-template>
+</div>
+

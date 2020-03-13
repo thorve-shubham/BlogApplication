@@ -1,1 +1,24 @@
-<p style="text-align: center;">home works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <h2 style="text-align: center;">All Posted Blogs</h2>
+        <br>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-start" style="text-align: center;">
+        <div class="col-md-4 mt-4" *ngFor="let blog of allBlogs">
+            <div class="card bg-light">
+                <div class="card-header">{{ blog.title | uppercase }}</div>
+                <div class="card-body">
+                    
+                    Description : {{ blog.description }}<br>
+                    Created on : {{ blog.created | date}}<br>
+                    Author : {{ blog.author }}
+                </div>
+                <div class="card-footer">
+                    <a [routerLink]="['/blog',blog.blogId]" class="btn btn-info">Display</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
