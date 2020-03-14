@@ -4,8 +4,8 @@
         <br>
     </div>
 </div>
-<div class="container">
-    <div class="row justify-content-start" style="text-align: center;">
+<div class="container" *ngIf="allBlogs; else noBlogs">
+    <div class="row justify-content-start" style="text-align: center;" >
         <div class="col-md-4 mt-4" *ngFor="let blog of allBlogs">
             <div class="card bg-light">
                 <div class="card-header">{{ blog.title | uppercase }}</div>
@@ -22,3 +22,10 @@
         </div>
     </div>
 </div>
+<ng-template #noBlogs>
+    <div class="container">
+        <div class="col-md-12">
+            <h3>Loading Blogs</h3>
+        </div>
+    </div>
+</ng-template>

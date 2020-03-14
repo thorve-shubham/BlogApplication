@@ -1,35 +1,42 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <form #createBlogForm="ngForm" (ngSubmit)="createBlog()">
+        <div class="col-md-12" *ngIf="currentBlog">
+            <form #editBlogForm="ngForm" (ngSubmit)="editBlog()">
                 <div class="form-group">
                     <label for="blogTitle">Blog Title</label>
-                    <input type="text" name="blogTitle" class="form-control" id="blogTitle" [(ngModel)]="blogTitle" #title="ngModel" required>
+                    <input type="text" name="blogTitle" class="form-control" id="blogTitle" [(ngModel)]="currentBlog.title" #title="ngModel" required>
                 </div>
                 <div class="alert alert-danger" [hidden]="title.pristine || title.valid">
                     Blog Title is required
                 </div>
                 <div class="form-group">
                     <label for="blogDescription">Blog Description</label>
-                    <input required type="text" name="blogDescription" class="form-control" id="blogDescription" [(ngModel)]="blogDescription" #description="ngModel">
+                    <input required type="text" name="blogDescription" class="form-control" id="blogDescription" [(ngModel)]="currentBlog.description" #description="ngModel">
                 </div>
                 <div class="alert alert-danger" [hidden]="description.pristine || description.valid">
                     Description is required
                 </div>
                 <div class="form-group">
                     <label for="blogBody">Blog Body</label>
-                    <input required type="text" name="blogBody" class="form-control" id="blogBody" [(ngModel)]="blogHtml" #blogBody="ngModel">
+                    <input required type="text" name="blogBody" class="form-control" id="blogBody" [(ngModel)]="currentBlog.bodyHtml" #blogBody="ngModel">
                 </div>
                 <div class="form-group">
                     <label for="blogCategory">Category</label>
-                    <select required type="text" name="blogCategory" class="form-control" name="blogCategory" id="blogCategory" [(ngModel)]="blogCategory" #category="ngModel">
+                    <select required type="text" name="blogCategory" class="form-control" name="blogCategory" id="blogCategory" [(ngModel)]="currentBlog.category" #category="ngModel">
                         <!-- <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option> -->
                         <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
                     </select>
                 </div>
-                <button class="btn btn-primary" [disabled]="!createBlogForm.form.valid">Post</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!editBlogForm.form.valid">Update</button>
             </form>
         </div>
     </div>
+    <ng-template #notFound>
+        <div class="col-md-10">
+            <div class="alert alert-danger">
+                Data Not Found 
+            </div>
+        </div>
+    </ng-template>
 </div>

@@ -1,4 +1,4 @@
-<h3 style="text-align: center;">Detailed View of Person</h3><br>
+<h3 style="text-align: center;">Detailed View of Blog</h3><br>
 <div class="container" style="text-align: center;">
 <div *ngIf="currentBlog; else InvalidPost">
     <div class="row">
@@ -10,19 +10,18 @@
                 <div class="card-body">
                     <p [innerHTML]="currentBlog.bodyHtml"></p><br>
                     <p>Category : {{currentBlog.category}}</p>
-
                 </div>
 
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-4 mt-1">
-                            <button class="btn btn-primary">Edit</button>
+                            <button class="btn btn-primary" [routerLink]="['/edit',currentBlog.blogId]">Edit</button>
                         </div>
                         <div class="col-md-4 mt-1">
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger" (click)="deleteBlog()">Delete</button>
                         </div>
                         <div class="col-md-4 mt-1">
-                            <a class="btn btn-info" [routerLink]="['/home']">Back</a>
+                            <a class="btn btn-info" style="color: white;" (click)="goBack()">Back</a>
                         </div> 
                     </div> 
                 </div>
@@ -31,7 +30,7 @@
     </div>
 </div>
 <ng-template #InvalidPost>
-    NoPost Found
+    Loading Post
 </ng-template>
 </div>
 

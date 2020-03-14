@@ -56,7 +56,7 @@ export class BlogService {
       "views" : 0,
       "bodyHtml" : "this is Language blog",
       "description" : "this is Language blog description",
-      "title" : "About Spanish Course Launch"
+      "title" : "About Spanish Launch"
     }
     
   ]

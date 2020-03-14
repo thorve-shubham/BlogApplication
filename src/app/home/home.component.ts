@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../blog.service';
+//import { BlogService } from '../blog.service';
+import { BlogHttpService } from '../blog-http.service';
 
 
 @Component({
@@ -9,12 +10,21 @@ import { BlogService } from '../blog.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private blogService:BlogService) { }
+  constructor(private blogHttpService:BlogHttpService) { }
 
   allBlogs:any;
 
   ngOnInit(): void {
-    this.allBlogs=this.blogService.getAllBlog();
+    this.blogHttpService.getAllBlog().subscribe(
+      data=>{
+        console.log("data received Successfully");
+        this.allBlogs=data["data"];
+      },
+      error=>{
+        console.log("Something went Wrong");
+       
+      }
+    );
   }
 
 }

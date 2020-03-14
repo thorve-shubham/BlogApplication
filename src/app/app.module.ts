@@ -9,6 +9,13 @@ import { AboutComponent } from './about/about.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { ViewBlogComponent } from './view-blog/view-blog.component';
 import { BlogService } from './blog.service';
+import { BlogHttpService } from './blog-http.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 
 @NgModule({
@@ -17,13 +24,19 @@ import { BlogService } from './blog.service';
     HomeComponent,
     AboutComponent,
     BlogCreateComponent,
-    ViewBlogComponent
+    ViewBlogComponent,
+    BlogEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    
   ],
-  providers: [BlogService],
+  providers: [BlogHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

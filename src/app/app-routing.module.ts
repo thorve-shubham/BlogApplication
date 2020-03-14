@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { ViewBlogComponent } from './view-blog/view-blog.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'createBlog',component:BlogCreateComponent},
-  {path:'blog/:blogId',component:ViewBlogComponent}
+  {path:'blog/:blogId',component:ViewBlogComponent},
+  {path:'edit/:blogId',component:BlogEditComponent}
 ];
 
 @NgModule({
